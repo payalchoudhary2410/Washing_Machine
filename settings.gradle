@@ -1,0 +1,2 @@
+rootProject.name='Washing_Machine'
+include ':app'
