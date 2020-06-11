@@ -4,6 +4,138 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/grad_bg"
     tools:context=".Registration">
+
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#050505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.163" />
+
+
+    <EditText
+        android:id="@+id/ldapid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Ldap (xxx@iitb.ac.in)"
+        android:inputType="textPersonName"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        android:layout_marginTop="20dp"/>
+
+
+    <EditText
+        android:id="@+id/wing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Wing  (A/B/C)"
+        android:inputType="textPersonName"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintTop_toBottomOf="@+id/ldapid"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/roomno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Room No"
+        android:inputType="textPersonName"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintTop_toBottomOf="@+id/wing"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="textPersonName"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintTop_toBottomOf="@+id/roomno"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#0C0C0C"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintTop_toBottomOf="@+id/phone"
+        android:layout_marginTop="20dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="150dp"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="577dp" />
+
+    <TextView
+        android:id="@+id/exist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_sans_black_italic"
+        android:text="Already Have an account? Login"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.677"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintVertical_bias="0.0" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@
         android:layout_width="229dp"
         android:layout_height="58dp"
         android:ems="10"
-        android:hint="Roll Number"
+        android:hint="LDAP (xxx@iitb.ac.in)"
         android:inputType="textPersonName"
         android:textColorHint="#050505"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
         android:id="@+id/signup"
@@ -75,10 +75,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintVertical_bias="0.806" />
 
     <TextView
         android:id="@+id/contactUs"
@@ -89,8 +89,21 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
+        app:layout_constraintHorizontal_bias="0.677"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup"
-        app:layout_constraintVertical_bias="0.297" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fpass"
+        android:layout_width="183dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/alegreya_sans_black_italic"
+        android:text="Forgot Password?"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

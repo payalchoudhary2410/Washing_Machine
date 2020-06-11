@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContactUs"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".ContactUs" />
         <activity android:name=".App_Main_Activity" />
         <activity android:name=".Registration" />
         <activity android:name=".MainActivity">
@@ -17,6 +18,16 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="payalchoudhary2410.github.io/washing_machine/"
+
+                    android:scheme="https"/>
             </intent-filter>
         </activity>
         <activity android:name=".SplashActivity">
