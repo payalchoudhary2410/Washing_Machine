@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser!=null){
             Intent i= new Intent(MainActivity.this,App_Main_Activity.class);
+            startActivity(i);
             finish();
         }
         
@@ -69,6 +70,26 @@ public class MainActivity extends AppCompatActivity {
                 signIn();
                
                 
+            }
+        });
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in= new Intent(MainActivity.this,Registration.class);
+                startActivity(in);
+
+            }
+        });
+
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in= new Intent(MainActivity.this,ContactUs.class);
+                startActivity(in);
+
+
+
             }
         });
             
@@ -96,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent intent=new Intent(MainActivity.this,App_Main_Activity.class);
-                            
+                            startActivity(intent);
                         }
                         else{
                             String ptext=iitbroll+" Not registered";
