@@ -146,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signIn() {
+        System.out.println(iitbroll);
+        System.out.println(passw);
         mAuth.signInWithEmailAndPassword(iitbroll,passw)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

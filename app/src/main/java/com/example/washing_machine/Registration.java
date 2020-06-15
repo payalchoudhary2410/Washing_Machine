@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,6 +35,7 @@ public class Registration extends AppCompatActivity {
     private TextView login;
 
     DatabaseReference reference;
+    private static final String TAG= "Reg:";
 
     String Name,Ldap,Wing,Room,Phone,Password;
     FirebaseAuth mauth;
@@ -73,40 +75,46 @@ public class Registration extends AppCompatActivity {
                             .addOnCompleteListener(Registration.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull final Task<AuthResult> task) {
-                                    FirebaseUser user = mauth.getCurrentUser();
-                                    DatabaseReference users = reference.child(Phone);
-                                    ValueEventListener eventListener = new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            if (!dataSnapshot.exists()) {
-                                                Users users = new Users(Name, Ldap, Wing, Phone, Room);
-                                                reference.child(Phone).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        Toast.makeText(Registration.this, "Registration Successful", Toast.LENGTH_SHORT).show();
-                                                        Intent interestIntent = new Intent(Registration.this, App_Main_Activity.class);
-                                                        interestIntent.putExtra("wing", Wing);
-                                                        startActivity(interestIntent);
+                                    if (task.isSuccessful()) {
+                                        FirebaseUser user = mauth.getCurrentUser();
+                                        DatabaseReference users = reference.child(Phone);
+                                        ValueEventListener eventListener = new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                if (!dataSnapshot.exists()) {
+                                                    Users users = new Users(Name, Ldap, Wing, Room, Phone);
+                                                    reference.child(Phone).setValue(users).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            Toast.makeText(Registration.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+                                                            Intent interestIntent = new Intent(Registration.this, App_Main_Activity.class);
+                                                            interestIntent.putExtra("wing", Wing);
+                                                            startActivity(interestIntent);
 
 
-                                                    }
+                                                        }
 
 
-                                                });
-                                            } else {
-                                                Toast.makeText(Registration.this, "Ldap Id already Registered", Toast.LENGTH_SHORT).show();
+                                                    });
+                                                } else {
+                                                    Toast.makeText(Registration.this, "Ldap Id already Registered", Toast.LENGTH_SHORT).show();
+                                                }
                                             }
-                                        }
 
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                                        }
-                                    };
-                                    users.addListenerForSingleValueEvent(eventListener);
+                                            }
+                                        };
+                                        users.addListenerForSingleValueEvent(eventListener);
 
 
+                                    }
+                                    else{
+                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(Registration.this, "Error", Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             });
                 }
